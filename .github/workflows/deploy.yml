@@ -12,12 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: '18'
       
-      - name: Install dependencies
+      - name: Install Bun globally
+        run: npm install -g bun
+      
+      - name: Install dependencies with Bun
         run: bun install
       
       - name: Build
