@@ -35,7 +35,7 @@ const HeroSection = () => {
           className="text-5xl md:text-8xl font-bold mb-6 leading-tight"
         >
           Hi, I'm{" "}
-          <span className="text-gradient-vivid">Your Name</span>
+          <span className="text-gradient-vivid">Sunil Kundruk</span>
         </motion.h1>
 
         <motion.p
@@ -44,7 +44,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10"
         >
-          MSc in Data Science · Building intelligent systems with machine learning, deep learning, and data-driven insights.
+          Data Science Engineer · MSc in Data Science from Reva University · Designing production-scale ML systems and intelligent AI architectures.
         </motion.p>
 
         <motion.div

@@ -3,27 +3,51 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Customer Churn Prediction",
-    description: "Built an end-to-end ML pipeline predicting customer churn with 94% accuracy using XGBoost and feature engineering on 500K+ records.",
-    tags: ["Python", "XGBoost", "Pandas", "Scikit-learn"],
+    title: "Eddie - GenAI-Powered Analytics Assistant",
+    description: "Architected a LLM-based multi-agent system integrating query routing with Snowflake analytics. Enables natural language campaign insights and automated SQL generation for 40+ business metrics, improving decision-making speed by 50%.",
+    tags: ["LangChain", "Claude 3.5", "Snowflake", "Python", "Multi-Agent AI"],
     accent: "purple",
   },
   {
-    title: "NLP Sentiment Analyzer",
-    description: "Developed a deep learning model for real-time sentiment analysis of social media data using transformer architectures.",
-    tags: ["PyTorch", "NLP", "Transformers", "FastAPI"],
+    title: "POLAR UNIFICATION - Data Deduplication",
+    description: "High-performance customer record deduplication platform using Apache Polars. Achieved 50-100x performance improvement over pandas-based pipeline with vectorized operations and multi-threaded execution for millions of records.",
+    tags: ["Apache Polars", "Python", "Data Engineering", "Performance Optimization"],
     accent: "pink",
   },
   {
-    title: "Real-Time Data Dashboard",
-    description: "Created an interactive analytics dashboard processing streaming data with automated anomaly detection and alerting.",
-    tags: ["Python", "Spark", "Plotly", "Kafka"],
+    title: "Multi-Model ML Inference Pipeline",
+    description: "Designed and deployed production-scale system processing millions of customer records across 20+ enterprise accounts. Supports CLTV prediction, RFM segmentation, gender prediction, preference modeling, and lookalike audiences with Spark-based distributed processing.",
+    tags: ["PySpark", "ML Pipeline", "Scikit-learn", "Production Systems"],
     accent: "cyan",
   },
   {
-    title: "Image Classification Pipeline",
-    description: "Designed a CNN-based image classification system with automated data augmentation and model versioning.",
-    tags: ["TensorFlow", "Docker", "AWS", "MLflow"],
+    title: "AI-Powered Retail Query Engine",
+    description: "Developed natural language to SQL system enabling non-technical users to query retail data. Used LangChain and LLaMA 3.1B with Streamlit interface, improving decision-making speed by 50% and analysis accessibility.",
+    tags: ["LangChain", "LLaMA", "Streamlit", "Natural Language Processing"],
+    accent: "orange",
+  },
+  {
+    title: "Fraud Detection & Risk Scoring System",
+    description: "Implemented loyalty fraud detection and risk prediction systems using rule-based scoring, Isolation Forest anomaly detection, and XGBoost models to identify abnormal redemption behavior and predict risk escalation.",
+    tags: ["XGBoost", "Isolation Forest", "Scikit-learn", "Risk Modeling"],
+    accent: "purple",
+  },
+  {
+    title: "Target E-Commerce Sales Analysis",
+    description: "Analyzed 100,000+ orders from Target Brazil's dataset, optimizing query performance by 30%. Implemented complex SQL for customer behavior analysis, improving decision-making by 40% and marketing efficiency by 20%.",
+    tags: ["SQL", "MySQL", "Data Analysis", "Performance Optimization"],
+    accent: "pink",
+  },
+  {
+    title: "AI Data Analysis Assistant",
+    description: "Developed web application enabling natural language analysis of CSV, Excel, and PDF files. Integrated interactive dashboards with Plotly and Streamlit, reducing analysis time by 40% through LLM-powered query processing.",
+    tags: ["LLM", "Streamlit", "Plotly", "Python"],
+    accent: "cyan",
+  },
+  {
+    title: "Zomato Restaurant Insights Dashboard",
+    description: "Analyzed 1,102 restaurants across 14 countries providing insights on customer preferences and sales trends. Optimized Power BI performance with interactive charts, improving marketing ROI by 50%.",
+    tags: ["Power BI", "Data Visualization", "Analytics", "SQL"],
     accent: "orange",
   },
 ];

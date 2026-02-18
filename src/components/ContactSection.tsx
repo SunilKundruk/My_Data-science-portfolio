@@ -2,9 +2,9 @@ import { Mail, Linkedin, Github, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const links = [
-  { href: "mailto:your@email.com", icon: Mail, label: "Email", color: "purple" },
-  { href: "#", icon: Linkedin, label: "LinkedIn", color: "cyan" },
-  { href: "#", icon: Github, label: "GitHub", color: "pink" },
+  { href: "mailto:sunilkundruk2001@gmail.com", icon: Mail, label: "Email", color: "purple" },
+  { href: "https://www.linkedin.com/in/sunil-kundruk", icon: Linkedin, label: "LinkedIn", color: "cyan" },
+  { href: "https://github.com/sunilkundruk", icon: Github, label: "GitHub", color: "pink" },
 ];
 
 const colorMap: Record<string, string> = {
@@ -43,6 +43,15 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="text-muted-foreground mb-10 text-lg"
+        >
+          Bengaluru, India · (+91) 9611988146 · sunilkundruk2001@gmail.com
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.25 }}
+          className="text-muted-foreground mb-10 text-base"
         >
           Open to opportunities in data science, machine learning engineering, and analytics roles.
         </motion.p>
