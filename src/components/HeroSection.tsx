@@ -1,37 +1,82 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
+    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[hsl(var(--color-purple))] glow-orb animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[hsl(var(--color-pink))] glow-orb animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full bg-[hsl(var(--color-cyan))] glow-orb animate-pulse" style={{ animationDelay: '2s' }} />
+
       {/* Grid background */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: 'linear-gradient(hsl(175 70% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(175 70% 50%) 1px, transparent 1px)',
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(hsl(265 85% 65%) 1px, transparent 1px), linear-gradient(90deg, hsl(265 85% 65%) 1px, transparent 1px)',
         backgroundSize: '60px 60px'
       }} />
 
-      <div className="relative z-10 max-w-3xl text-center">
-        <p className="font-mono text-primary text-sm tracking-widest uppercase mb-4 animate-fade-in">
-          Data Science Engineer
-        </p>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0 }}>
-          Hi, I'm <span className="text-gradient">Your Name</span>
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0 }}>
+      <div className="relative z-10 max-w-4xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[hsl(var(--color-purple)/0.3)] bg-[hsl(var(--color-purple)/0.1)] mb-6"
+        >
+          <Sparkles size={14} className="text-[hsl(var(--color-purple))]" />
+          <span className="font-display text-sm tracking-widest uppercase text-[hsl(var(--color-purple))]">
+            Data Science Engineer
+          </span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-5xl md:text-8xl font-bold mb-6 leading-tight"
+        >
+          Hi, I'm{" "}
+          <span className="text-gradient-vivid">Your Name</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10"
+        >
           MSc in Data Science · Building intelligent systems with machine learning, deep learning, and data-driven insights.
-        </p>
-        <div className="flex gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0 }}>
-          <a href="#projects" className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-mono text-sm font-medium hover:opacity-90 transition-opacity">
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex gap-4 justify-center"
+        >
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[hsl(var(--color-purple))] to-[hsl(var(--color-pink))] text-white font-display text-sm font-medium hover:scale-105 transition-transform shadow-lg shadow-[hsl(var(--color-purple)/0.3)]"
+          >
             View Projects
           </a>
-          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-border text-foreground font-mono text-sm font-medium hover:border-primary hover:text-primary transition-colors">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-[hsl(var(--color-purple)/0.4)] text-foreground font-display text-sm font-medium hover:border-[hsl(var(--color-purple))] hover:bg-[hsl(var(--color-purple)/0.1)] transition-all"
+          >
             Get in Touch
           </a>
-        </div>
+        </motion.div>
       </div>
 
-      <a href="#about" className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce">
+      <motion.a
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-[hsl(var(--color-purple))] transition-colors animate-bounce"
+      >
         <ArrowDown size={20} />
-      </a>
+      </motion.a>
     </section>
   );
 };
