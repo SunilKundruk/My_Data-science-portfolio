@@ -11,6 +11,7 @@ const skills = [
   { category: "ML Systems", items: ["Multi-Model Inference", "Fraud Detection", "Risk Scoring", "CLTV Prediction", "Customer Segmentation"], color: "orange" },
 ];
 
+
 const colorMap: Record<string, { border: string; bg: string; text: string; dot: string }> = {
   purple: {
     border: "hover:border-[hsl(var(--color-purple)/0.5)]",
