@@ -3,22 +3,11 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Eddie - GenAI-Powered Analytics Assistant",
-    description: "Architected a LLM-based multi-agent system integrating query routing with Snowflake analytics. Enables natural language campaign insights and automated SQL generation for 40+ business metrics, improving decision-making speed by 50%.",
-    tags: ["LangChain", "Claude 3.5", "Snowflake", "Python", "Multi-Agent AI"],
-    accent: "purple",
-  },
-  {
-    title: "POLAR UNIFICATION - Data Deduplication",
-    description: "High-performance customer record deduplication platform using Apache Polars. Achieved 50-100x performance improvement over pandas-based pipeline with vectorized operations and multi-threaded execution for millions of records.",
-    tags: ["Apache Polars", "Python", "Data Engineering", "Performance Optimization"],
-    accent: "pink",
-  },
-  {
     title: "Multi-Model ML Inference Pipeline",
     description: "Designed and deployed production-scale system processing millions of customer records across 20+ enterprise accounts. Supports CLTV prediction, RFM segmentation, gender prediction, preference modeling, and lookalike audiences with Spark-based distributed processing.",
     tags: ["PySpark", "ML Pipeline", "Scikit-learn", "Production Systems"],
     accent: "cyan",
+    github: "https://github.com/SunilKundruk/Multi-Model-ML-Inference-Pipeline",
   },
   {
     title: "AI-Powered Retail Query Engine",
@@ -122,7 +111,13 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
                   <div className="flex gap-2 text-muted-foreground">
-                    <Github size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} />
+                    {project.github ? (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                        <Github size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} />
+                      </a>
+                    ) : (
+                      <Github size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} />
+                    )}
                     <ExternalLink size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} />
                   </div>
                 </div>
