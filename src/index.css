@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,41 +6,45 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 210 20% 90%;
+    --background: 230 25% 6%;
+    --foreground: 210 20% 92%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 210 20% 90%;
+    --card: 230 22% 10%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 210 20% 90%;
+    --popover: 230 22% 10%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 175 70% 50%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 265 85% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 15%;
+    --secondary: 230 18% 16%;
     --secondary-foreground: 210 20% 80%;
 
-    --muted: 220 15% 15%;
+    --muted: 230 18% 16%;
     --muted-foreground: 215 15% 55%;
 
-    --accent: 175 70% 50%;
-    --accent-foreground: 220 20% 7%;
+    --accent: 340 85% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 175 70% 50%;
+    --border: 230 18% 18%;
+    --input: 230 18% 18%;
+    --ring: 265 85% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Space Grotesk', sans-serif;
     --font-sans: 'Inter', sans-serif;
 
-    --glow-primary: 0 0 20px hsl(175 70% 50% / 0.3);
-    --glow-primary-strong: 0 0 40px hsl(175 70% 50% / 0.2);
+    --color-cyan: 185 80% 55%;
+    --color-pink: 340 85% 60%;
+    --color-purple: 265 85% 65%;
+    --color-orange: 25 95% 60%;
+    --color-green: 155 70% 50%;
+    --color-yellow: 45 95% 60%;
   }
 }
 
@@ -50,27 +54,61 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-mono);
+    font-family: var(--font-display);
   }
 }
 
 @layer utilities {
-  .text-gradient {
+  .text-gradient-vivid {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(175 70% 50%), hsl(195 80% 60%));
+    background-image: linear-gradient(135deg, hsl(var(--color-purple)), hsl(var(--color-pink)), hsl(var(--color-orange)));
   }
 
-  .border-glow {
-    box-shadow: var(--glow-primary);
+  .text-gradient-cool {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--color-cyan)), hsl(var(--color-purple)));
+  }
+
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--color-orange)), hsl(var(--color-pink)));
+  }
+
+  .bg-gradient-mesh {
+    background:
+      radial-gradient(ellipse at 20% 50%, hsl(var(--color-purple) / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(var(--color-pink) / 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, hsl(var(--color-cyan) / 0.1) 0%, transparent 50%);
+  }
+
+  .card-glow-purple {
+    box-shadow: 0 0 30px hsl(var(--color-purple) / 0.15), inset 0 1px 0 hsl(var(--color-purple) / 0.1);
+  }
+
+  .card-glow-pink {
+    box-shadow: 0 0 30px hsl(var(--color-pink) / 0.15), inset 0 1px 0 hsl(var(--color-pink) / 0.1);
+  }
+
+  .card-glow-cyan {
+    box-shadow: 0 0 30px hsl(var(--color-cyan) / 0.15), inset 0 1px 0 hsl(var(--color-cyan) / 0.1);
   }
 
   .section-line {
     @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(175 70% 50% / 0.4), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--color-purple) / 0.5), hsl(var(--color-pink) / 0.5), transparent);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, hsl(var(--color-purple) / 0.5), hsl(var(--color-pink) / 0.5), hsl(var(--color-cyan) / 0.5)) 1;
+  }
+
+  .glow-orb {
+    filter: blur(80px);
+    opacity: 0.4;
   }
 }
