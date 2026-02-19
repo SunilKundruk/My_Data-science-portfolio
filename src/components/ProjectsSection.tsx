@@ -32,6 +32,7 @@ const projects = [
     description: "Developed web application enabling natural language analysis of CSV, Excel, and PDF files. Integrated interactive dashboards with Plotly and Streamlit, reducing analysis time by 40% through LLM-powered query processing.",
     tags: ["LLM", "Streamlit", "Plotly", "Python"],
     accent: "cyan",
+    github: "https://github.com/SunilKundruk/AI-Data-Analysis-Assistant",
   },
   {
     title: "Zomato Restaurant Insights Dashboard",
@@ -118,7 +119,7 @@ const ProjectsSection = () => {
                     ) : (
                       <Github size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} />
                     )}
-                    <ExternalLink size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} />
+                    {/* <ExternalLink size={16} className={`hover:${styles.icon} cursor-pointer transition-colors`} /> */}
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
